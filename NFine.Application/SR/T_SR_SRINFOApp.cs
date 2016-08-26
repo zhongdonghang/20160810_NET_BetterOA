@@ -21,7 +21,7 @@ namespace NFine.Application.SR
 
         public T_SR_SRINFOEntity GetForm(string keyValue)
         {
-            return service.FindEntity(keyValue);
+            return service.FindEntity(int.Parse(keyValue));
         }
 
         public List<T_SR_SRINFOEntity> GetList(Pagination pagination, string keyword,string LOGIN_NAME)

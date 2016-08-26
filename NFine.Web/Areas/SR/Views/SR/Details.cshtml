@@ -5,6 +5,7 @@
 <script>
     var keyValue = $.request("keyValue");
     $(function () {
+        initControl();
         $.ajax({
             url: "/SR/SR/GetFormJson",
             data: { keyValue: keyValue },
@@ -18,6 +19,16 @@
             }
         });
     });
+
+    function initControl() {
+
+        $("#ITEM_NAME").bindSelect({
+            url: "/SR/SR/GetItemGridJson",
+            id: "OID",
+            text: "ITEM_NAME"
+        });
+
+    }
 
   </script>
 <form id="form1">
@@ -61,14 +72,14 @@
                         <textarea id="SR_DESC" placeholder="请输入需求详细描述" name="SR_DESC" class="form-control required" style="height: 140px;"></textarea>
                     </td>
                 </tr>
-                <tr>
+                @*<tr>
                     <th class="formTitle" valign="top" style="padding-top: 5px;">
                         附件上传
                     </th>
                     <td class="formValue" colspan="3">
                         <input type="file" id="SR_FILE" multiple="multiple" name="SR_FILE" />
                     </td>
-                </tr>
+                </tr>*@
             </table>
         </div>
     </div>

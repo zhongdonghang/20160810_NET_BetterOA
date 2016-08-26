@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace NFine.Domain._03_Entity.SR
 {
+    /// <summary>
+    /// 需求表
+    /// </summary>
     public class T_SR_SRINFOEntity
     {
         public int OID { get; set; }
@@ -16,7 +19,7 @@ namespace NFine.Domain._03_Entity.SR
         public int ITEMOID { get; set; }
         public string TITLE { get; set; }
         public string SR_DESC { get; set; }
-    //    public string SR_FILE { get; set; }
+        public string IS_SR_FILE { get; set; }
         public string LOGIN_NAME { get; set; }
     }
 }

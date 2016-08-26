@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace NFine.Domain._03_Entity.SR
 {
+    /// <summary>
+    /// 项目表
+    /// </summary>
     public class T_SR_ITEMINFOEntity
     {
         public int OID { get; set; }
