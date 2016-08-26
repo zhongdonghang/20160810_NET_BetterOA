@@ -25,5 +25,11 @@ namespace NFine.Application.SR
           //  expression = expression.And(t => t.F_Category == 1);
             return service.IQueryable(expression).OrderBy(t => t.OID).ToList();
         }
+
+        public T_SR_ITEMINFOEntity Get(int OID)
+        {
+            return service.FindEntity(OID);
+             
+        }
     }
 }

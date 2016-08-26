@@ -45,6 +45,8 @@ namespace NFine.Web.Areas.SR.Controllers
             return Content(data.ToJson());
         }
 
+  
+
         [HttpGet]
         [HandlerAjaxOnly]
         public ActionResult GetFormJson(string keyValue)
@@ -59,8 +61,18 @@ namespace NFine.Web.Areas.SR.Controllers
         public ActionResult SubmitForm(T_SR_SRINFOEntity objT_SR_SRINFOEntity, string keyValue)
         {
             //处理上传文件
+           HttpPostedFileBase file = Request.Files["SR_FILE"];
+            if (file != null)
+            {
+                    
+            }
+
             OperatorModel currentOperater = OperatorProvider.Provider.GetCurrent();
             objT_SR_SRINFOEntity.LOGIN_NAME = currentOperater.UserName;
+            objT_SR_SRINFOEntity.ITEMOID = int.Parse(objT_SR_SRINFOEntity.ITEM_NAME);
+
+            objT_SR_SRINFOEntity.ITEM_NAME = objT_SR_ITEMINFOApp.Get(objT_SR_SRINFOEntity.ITEMOID).ITEM_NAME;
+
             objT_SR_SRINFOApp.SubmitForm(objT_SR_SRINFOEntity, "");
             return Success("操作成功。");
         }

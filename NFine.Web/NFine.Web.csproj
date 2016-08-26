@@ -124,6 +124,7 @@
     <Compile Include="Areas\ReportManage\Controllers\EchartsController.cs" />
     <Compile Include="Areas\ReportManage\Controllers\HighchartsController.cs" />
     <Compile Include="Areas\ReportManage\ReportManageAreaRegistration.cs" />
+    <Compile Include="Areas\SR\Controllers\SRAllListController.cs" />
     <Compile Include="Areas\SR\Controllers\SRController.cs" />
     <Compile Include="Areas\SR\SRAreaRegistration.cs" />
     <Compile Include="Areas\SystemManage\Controllers\AreaController.cs" />
@@ -620,6 +621,7 @@
     <Content Include="Areas\SR\Views\SR\Index.cshtml" />
     <Content Include="Areas\SR\Views\SR\Form.cshtml" />
     <Content Include="Areas\SR\Views\SR\Details.cshtml" />
+    <Content Include="Areas\SR\Views\SRAllList\Index.cshtml" />
     <None Include="Properties\PublishProfiles\NFine.Framework.Release.pubxml" />
   </ItemGroup>
   <PropertyGroup>

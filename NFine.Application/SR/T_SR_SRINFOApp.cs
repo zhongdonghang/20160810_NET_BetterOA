@@ -24,6 +24,13 @@ namespace NFine.Application.SR
             return service.FindEntity(int.Parse(keyValue));
         }
 
+        /// <summary>
+        /// 根据当前用户取出需求列表
+        /// </summary>
+        /// <param name="pagination"></param>
+        /// <param name="keyword"></param>
+        /// <param name="LOGIN_NAME"></param>
+        /// <returns></returns>
         public List<T_SR_SRINFOEntity> GetList(Pagination pagination, string keyword,string LOGIN_NAME)
         {
             var expression = ExtLinq.True<T_SR_SRINFOEntity>();
@@ -32,6 +39,23 @@ namespace NFine.Application.SR
                 expression = expression.And(t => t.TITLE.Contains(keyword));
             }
             expression = expression.And(t => t.LOGIN_NAME == LOGIN_NAME);
+            return service.FindList(expression, pagination);
+        }
+
+        /// <summary>
+        /// 获取当前所有已经提的需求
+        /// </summary>
+        /// <param name="pagination"></param>
+        /// <param name="keyword"></param>
+        /// <returns></returns>
+        public List<T_SR_SRINFOEntity> GetList(Pagination pagination, string keyword)
+        {
+            var expression = ExtLinq.True<T_SR_SRINFOEntity>();
+            if (!string.IsNullOrEmpty(keyword))
+            {
+                expression = expression.And(t => t.TITLE.Contains(keyword));
+            }
+          //  expression = expression.And(t => t.LOGIN_NAME == LOGIN_NAME);
             return service.FindList(expression, pagination);
         }
 
